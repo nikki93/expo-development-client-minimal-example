@@ -1,0 +1,12 @@
+{
+  "name": "DevClientMinimalExample",
+  "displayName": "DevClientMinimalExample",
+  "expo": {
+    "name": "DevClientMinimalExample",
+    "slug": "DevClientMinimalExample",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
