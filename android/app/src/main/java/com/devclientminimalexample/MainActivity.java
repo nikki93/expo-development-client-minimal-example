@@ -11,7 +11,9 @@ import expo.modules.developmentclient.DevelopmentClientController;
 import expo.modules.splashscreen.singletons.SplashScreen;
 import expo.modules.splashscreen.SplashScreenImageResizeMode;
 
-public class MainActivity extends ReactActivity {
+import expo.modules.devmenu.react.DevMenuAwareReactActivity;
+
+public class MainActivity extends DevMenuAwareReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
