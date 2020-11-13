@@ -48,7 +48,7 @@ static void InitializeFlipper(UIApplication *application) {
   self.launchOptions = launchOptions;
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   #ifdef DEBUG
-    [self initializeReactNativeApp];
+    [EXDevelopmentClientController.sharedInstance startWithWindow:self.window delegate:self launchOptions:self.launchOptions];
   #else
     EXUpdatesAppController *controller = [EXUpdatesAppController sharedInstance];
     controller.delegate = self;
@@ -83,7 +83,7 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
  #ifdef DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  return EXDevelopmentClientController.sharedInstance.sourceUrl;
  #else
   return [[EXUpdatesAppController sharedInstance] launchAssetUrl];
  #endif
@@ -93,6 +93,10 @@ static void InitializeFlipper(UIApplication *application) {
   appController.bridge = [self initializeReactNativeApp];
   EXSplashScreenService *splashScreenService = (EXSplashScreenService *)[UMModuleRegistryProvider getSingletonModuleForClass:[EXSplashScreenService class]];
   [splashScreenService showSplashScreenFor:self.window.rootViewController];
+}
+
+- (void)developmentClientController:(EXDevelopmentClientController *)developmentClientController didStartWithSuccess:(BOOL)success {
+  developmentClientController.appBridge = [self initializeReactNativeApp];
 }
 
 @end
