@@ -1,4 +1,4 @@
-These instructions link to specific commits that show the diff for that step. The steps showing "Resulting auto-generated changes" just show the results of running a command (such as `npx pod-install`) that edits files automatically.
+These instructions link to specific commits that show the diff for that step. The links that look like "Resulting auto-generated changes" just show the results of running a command (such as `npx pod-install`) that edits files automatically.
 
 - Start with a bare expo project
     - This project was initialized with `expo init DevClientMinimalExample` (that was the name of this project, feel free to use your own!)
