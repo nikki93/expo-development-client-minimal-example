@@ -3546,10 +3546,17 @@ expo-constants@~9.2.0:
     fbjs "1.0.0"
     uuid "^3.3.2"
 
-expo-dev-menu-interface@^0.0.3:
+expo-dev-menu-interface@0.0.3, expo-dev-menu-interface@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/expo-dev-menu-interface/-/expo-dev-menu-interface-0.0.3.tgz#d3e88a4369b94ed4eeef59d3db341b311fc50082"
   integrity sha512-VcnbTR5O6VTI0JKUPWnucu5v8LBvFShM0DcsexNgSfjGjKxyChWMimYPshotS8V+zM02/xfxTPDVSm/228YfvA==
+
+expo-dev-menu@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/expo-dev-menu/-/expo-dev-menu-0.0.3.tgz#5049536e2a0c92c46e258baa0befc623a117835f"
+  integrity sha512-lZEb6+IDZyUkYsVpFRAvkFWbmDEjkZWK/8K/vRx924tisHVexLt4h7eL6lg/tYDu/MF1T8zLLJdOo18mzEGmVw==
+  dependencies:
+    expo-dev-menu-interface "0.0.3"
 
 expo-development-client@^0.0.9:
   version "0.0.9"
