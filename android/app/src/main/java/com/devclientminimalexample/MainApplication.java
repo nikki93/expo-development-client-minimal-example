@@ -19,6 +19,7 @@ import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.Package;
 import org.unimodules.core.interfaces.SingletonModule;
 import expo.modules.constants.ConstantsPackage;
+import expo.modules.developmentclient.DevelopmentClientController;
 import expo.modules.permissions.PermissionsPackage;
 import expo.modules.filesystem.FileSystemPackage;
 import expo.modules.updates.UpdatesController;
@@ -79,6 +80,10 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+
+    if (BuildConfig.DEBUG) {
+      DevelopmentClientController.initialize(this, mReactNativeHost);
+    }
 
     if (!BuildConfig.DEBUG) {
       UpdatesController.initialize(this);
